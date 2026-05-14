@@ -4,7 +4,7 @@
    To wire submissions to n8n, set WEBHOOK_URL below.
    ========================================================= */
 
-const WEBHOOK_URL = ""; // e.g. "https://designinkco.app.n8n.cloud/webhook/diagnostic"
+const WEBHOOK_URL = "https://designinkco.app.n8n.cloud/webhook/diagnostic-lead";
 
 const QUESTIONS = [
   {
