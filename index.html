@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The 10-Point Diagnostic: Score Your Interior Design Website Free | Design Ink Co.</title>
+  <meta name="description" content="Score your interior design studio website in 4 minutes against the 10 components proven to win clients. Free instant balanced scorecard across SEO, Design, Conversion, and Trust." />
+  <meta name="theme-color" content="#1A1A1A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Top Banner ===== -->
+  <div class="banner">
+    <span>You are taking <strong>The 10-Point Diagnostic.</strong></span>
+    <a href="https://www.designinkco.com">Back to designinkco.com →</a>
+  </div>
+
+  <!-- ===== Header (lead-magnet mode: minimal chrome, no agency nav) ===== -->
+  <header class="site-header">
+    <a href="https://www.designinkco.com" class="logo">Design Ink<span>Co.</span></a>
+    <a href="https://www.designinkco.com" class="btn btn-primary btn-sm">Visit designinkco.com</a>
+  </header>
+
+  <!-- ===== Diagnostic App ===== -->
+  <main class="dx-app" id="dx-app">
+
+    <!-- INTRO STATE -->
+    <section class="dx-state dx-intro" data-state="intro">
+      <div class="dx-intro-inner">
+        <p class="eyebrow">The 10-Point Diagnostic</p>
+        <h1>Your website looks beautiful. <em>Does it book clients?</em></h1>
+        <p class="lede">Most interior design websites look good and book nothing. This four-minute diagnostic scores yours against the ten components that separate the sites that win clients from the ones that just look pretty. Score out of 100. Instant result. No login.</p>
+
+        <div class="dx-intro-meta">
+          <div><strong>4 min</strong><span>to complete</span></div>
+          <div><strong>10 questions</strong><span>yes / partial / no</span></div>
+          <div><strong>Instant</strong><span>scorecard + actions</span></div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="dx-start">Start The Diagnostic</button>
+        <p class="dx-fine">Built on a benchmarked study of 18 interior design studios across the UK, Australia, and the US.</p>
+      </div>
+
+      <aside class="dx-intro-card">
+        <div class="scorecard">
+          <div class="scorecard-head">
+            <span>Sample Result</span>
+            <span class="score">68<small>/100</small></span>
+          </div>
+          <div class="bar"><label>SEO</label><div class="track"><span style="width:72%"></span></div><b>18</b></div>
+          <div class="bar"><label>Design</label><div class="track"><span style="width:88%"></span></div><b>22</b></div>
+          <div class="bar"><label>Conversion</label><div class="track"><span style="width:60%"></span></div><b>15</b></div>
+          <div class="bar"><label>Trust</label><div class="track"><span style="width:52%"></span></div><b>13</b></div>
+          <p class="scorecard-foot">Lopsided. Beautiful design, but a quiet inquiry path.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- QUESTION STATE -->
+    <section class="dx-state dx-question" data-state="question" hidden>
+      <div class="dx-progress-wrap">
+        <div class="dx-progress">
+          <div class="dx-progress-bar" id="dx-bar"></div>
+        </div>
+        <div class="dx-progress-meta">
+          <span>Question <span id="dx-current">1</span> of 10</span>
+          <span id="dx-pillar">SEO &amp; Discoverability</span>
+        </div>
+      </div>
+
+      <div class="dx-question-inner">
+        <p class="dx-q-no" id="dx-q-no">01</p>
+        <h2 id="dx-q-text">Question text goes here.</h2>
+        <p class="dx-q-help" id="dx-q-help">Helper text goes here.</p>
+
+        <div class="dx-options">
+          <button class="dx-option" data-value="10">
+            <span class="dx-key">Yes</span>
+            <span class="dx-label" id="dx-opt-yes">Fully done</span>
+          </button>
+          <button class="dx-option" data-value="5">
+            <span class="dx-key">Partially</span>
+            <span class="dx-label" id="dx-opt-partial">Sort of, not really</span>
+          </button>
+          <button class="dx-option" data-value="0">
+            <span class="dx-key">No</span>
+            <span class="dx-label" id="dx-opt-no">Not at all</span>
+          </button>
+        </div>
+
+        <div class="dx-controls">
+          <button class="btn btn-ghost btn-sm" id="dx-back">← Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GATE STATE -->
+    <section class="dx-state dx-gate" data-state="gate" hidden>
+      <div class="dx-gate-inner">
+        <p class="eyebrow">Almost there</p>
+        <h2>Where should we send your results?</h2>
+        <p class="lede">Your score is ready. Enter your details and we'll show you your full breakdown, your three priority actions, and how your site compares to the top-performing studios in the research.</p>
+
+        <form class="dx-gate-form" id="dx-gate-form" novalidate>
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" id="dx-name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" id="dx-email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Studio name</span>
+            <input type="text" name="studio" id="dx-studio" required />
+          </label>
+          <label>
+            <span>Studio website URL <em>(optional)</em></span>
+            <input type="url" name="url" id="dx-url" placeholder="https://" />
+          </label>
+          <label class="dx-consent">
+            <input type="checkbox" id="dx-consent" />
+            <span>I am happy to receive the Design Ink Co. journal (1x per month). Unsubscribe any time.</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg">Show Me My Score</button>
+          <p class="dx-fine">No spam, no list selling. We use your details only to send your results and follow up.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTS STATE -->
+    <section class="dx-state dx-results" data-state="results" hidden>
+      <header class="dx-results-head">
+        <p class="eyebrow">Your Scorecard</p>
+        <h2 id="dx-result-headline">Here's how your site scores.</h2>
+        <p class="lede" id="dx-result-sub">A balanced scorecard across the four pillars that decide whether a cold visitor inquires: SEO, Design, Conversion, and Trust.</p>
+      </header>
+
+      <div class="dx-results-grid">
+        <div class="dx-radar-wrap">
+          <header class="dx-radar-head">
+            <p class="eyebrow">Your Balanced Scorecard</p>
+            <p class="dx-radar-total"><span id="dx-total">0</span><small>/100</small></p>
+            <p class="dx-radar-shape" id="dx-shape">Your shape: balanced, expanded, lopsided, or collapsed.</p>
+          </header>
+
+          <svg
+            class="dx-radar"
+            viewBox="0 0 440 420"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Radar chart showing your balanced-scorecard score across SEO, Design, Conversion, and Trust, overlaid against the Top 5 Average benchmark from the research."
+          >
+            <!-- Grid rings (5, 10, 15, 20, 25) -->
+            <polygon class="grid" points="220,178 252,210 220,242 188,210" />
+            <polygon class="grid" points="220,146 284,210 220,274 156,210" />
+            <polygon class="grid" points="220,114 316,210 220,306 124,210" />
+            <polygon class="grid" points="220,82 348,210 220,338 92,210" />
+            <polygon class="grid grid-outer" points="220,50 380,210 220,370 60,210" />
+
+            <!-- Axes -->
+            <line class="axis" x1="220" y1="210" x2="220" y2="50" />
+            <line class="axis" x1="220" y1="210" x2="380" y2="210" />
+            <line class="axis" x1="220" y1="210" x2="220" y2="370" />
+            <line class="axis" x1="220" y1="210" x2="60" y2="210" />
+
+            <!-- Scale numbers -->
+            <text class="scale" x="226" y="184">5</text>
+            <text class="scale" x="226" y="152">10</text>
+            <text class="scale" x="226" y="120">15</text>
+            <text class="scale" x="226" y="88">20</text>
+            <text class="scale" x="226" y="56">25</text>
+
+            <!-- Top 5 Average benchmark (dashed outline) -->
+            <polygon class="poly benchmark" points="220,58.96 350.56,210 220,344.4 85.6,210" />
+            <!-- Benchmark axis values, anchored near each benchmark vertex -->
+            <text class="bm-num" x="236" y="67" text-anchor="start">23.6</text>
+            <text class="bm-num" x="350.56" y="198" text-anchor="middle">20.4</text>
+            <text class="bm-num" x="236" y="346" text-anchor="start">21.0</text>
+            <text class="bm-num" x="85.6" y="198" text-anchor="middle">21.0</text>
+
+            <!-- Your polygon (dynamic, written by JS) -->
+            <polygon class="poly user" id="dx-user-poly" points="220,210 220,210 220,210 220,210" />
+            <circle class="vertex user" id="dx-v-seo" cx="220" cy="210" r="5" />
+            <circle class="vertex user" id="dx-v-design" cx="220" cy="210" r="5" />
+            <circle class="vertex user" id="dx-v-conv" cx="220" cy="210" r="5" />
+            <circle class="vertex user" id="dx-v-trust" cx="220" cy="210" r="5" />
+
+            <!-- Pillar labels -->
+            <text class="label" x="220" y="34" text-anchor="middle">SEO</text>
+            <text class="label" x="392" y="214" text-anchor="start">Design</text>
+            <text class="label" x="220" y="395" text-anchor="middle">Conversion</text>
+            <text class="label" x="48" y="214" text-anchor="end">Trust</text>
+
+            <!-- Pillar score callouts (dynamic, written by JS) -->
+            <text class="dx-pillar-num" x="220" y="50" text-anchor="middle" id="dx-radar-seo"></text>
+            <text class="dx-pillar-num" x="386" y="200" text-anchor="end" id="dx-radar-design"></text>
+            <text class="dx-pillar-num" x="220" y="378" text-anchor="middle" id="dx-radar-conv"></text>
+            <text class="dx-pillar-num" x="54" y="200" text-anchor="start" id="dx-radar-trust"></text>
+          </svg>
+
+          <ul class="dx-radar-legend">
+            <li><span class="dot user" aria-hidden="true"></span>Your site</li>
+            <li><span class="dot benchmark" aria-hidden="true"></span>Top 5 average <em>&mdash; the benchmark</em></li>
+          </ul>
+        </div>
+
+        <div class="dx-actions">
+          <h3>Your three priority actions</h3>
+          <p class="dx-actions-sub">Ranked by impact, based on the components you scored lowest on.</p>
+          <ol class="dx-action-list" id="dx-action-list">
+            <!-- populated by JS -->
+          </ol>
+        </div>
+      </div>
+
+      <section class="dx-checklist">
+        <h3>The full 10-point breakdown</h3>
+        <ol class="dx-breakdown" id="dx-breakdown">
+          <!-- populated by JS -->
+        </ol>
+      </section>
+
+      <section class="dx-cta-final" id="book">
+        <h2>Want to talk through your score?</h2>
+        <p>Book a free 30-minute discovery call. We'll walk through your results, identify the two changes that would move the needle most, and talk about whether Design for Success is the right next step for your business.</p>
+        <div class="cta-row">
+          <a href="https://www.designinkco.com" class="btn btn-primary btn-lg">Book A Discovery Call</a>
+          <a href="https://www.designinkco.com" class="btn btn-ghost btn-lg">Back to designinkco.com</a>
+        </div>
+        <p class="dx-fine"><a href="#" id="dx-restart">Or take the diagnostic again →</a></p>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (lead-magnet: minimal, single back-link to designinkco.com) ===== -->
+  <footer class="site-footer">
+    <div class="foot-grid foot-grid-lean">
+      <div class="foot-brand">
+        <a href="https://www.designinkco.com" class="logo logo-light">Design Ink<span>Co.</span></a>
+        <p>Growth websites for interior designers. The 10-Point Diagnostic is built on a balanced-scorecard study of 18 leading studios across the UK, AU and US.</p>
+        <p class="foot-meta">Hong Kong &middot; Operating in HKT (UTC+8)</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <a href="https://www.designinkco.com">designinkco.com</a>
+        <a href="mailto:hello@designinkco.com">hello@designinkco.com</a>
+      </div>
+    </div>
+    <div class="foot-trust">
+      <p class="copyright">&copy; 2026 Design Ink Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="diagnostic.js" defer></script>
+</body>
+</html>
