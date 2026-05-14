@@ -17,7 +17,7 @@
   --dusty:      #DEA098;       /* Dusty Rose — warm accent */
   --blossom:    #FF85AD;       /* Blossom — sparingly */
 
-  --serif: "Fraunces", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --serif: "EB Garamond", "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   --max:   1200px;
@@ -1053,6 +1053,10 @@ section {
 
 /* ---------- Intro ---------- */
 .dx-intro {
+  /* intro is now a vertical stack: hero on top, methodology below */
+  display: block;
+}
+.dx-intro-top {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: clamp(40px, 6vw, 80px);
@@ -1089,6 +1093,144 @@ section {
   color: var(--muted);
   margin-top: 16px;
   max-width: 60ch;
+}
+.dx-fine a {
+  color: var(--accent-2);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.dx-fine a:hover { color: var(--accent); }
+
+/* ---------- Methodology (long-form explainer below the hero) ---------- */
+.dx-methodology {
+  margin-top: clamp(56px, 8vw, 120px);
+  padding-top: clamp(48px, 7vw, 80px);
+  border-top: 1px solid var(--line);
+}
+.dx-meth-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.dx-meth-head .eyebrow { margin: 0; }
+.dx-meth-skip {
+  font-size: 13px;
+  color: var(--accent-2);
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px;
+  letter-spacing: 0.02em;
+}
+.dx-meth-skip:hover { color: var(--accent); }
+
+.dx-meth-headline {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 0 0 28px;
+  max-width: 26ch;
+  letter-spacing: -0.015em;
+}
+.dx-meth-body {
+  max-width: 68ch;
+  margin-bottom: 48px;
+}
+.dx-meth-body p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.dx-meth-body p:last-child { margin-bottom: 0; }
+
+.dx-meth-section {
+  padding-top: 48px;
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+}
+.dx-meth-section > .eyebrow { margin-bottom: 10px; }
+.dx-meth-section > h3 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 500;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+}
+.dx-meth-section > .dx-meth-lede {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 68ch;
+  margin-bottom: 28px;
+}
+.dx-meth-section .pillar-grid { margin-top: 8px; }
+.dx-meth-section .blueprint-list { margin-top: 8px; }
+.dx-meth-output { margin-top: 8px; max-width: 68ch; }
+
+/* Research-report callout (between methodology + final CTA) */
+.dx-meth-research {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+  margin-top: 56px;
+  padding: 28px 32px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+}
+.dx-meth-research .eyebrow { color: var(--accent); margin-bottom: 8px; }
+.dx-meth-research h3 {
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 24px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.dx-meth-research p {
+  color: #C7C3BC;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 56ch;
+}
+.dx-meth-research .btn-ghost {
+  border-color: var(--paper);
+  color: var(--paper);
+  flex-shrink: 0;
+}
+.dx-meth-research .btn-ghost:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+@media (max-width: 720px) {
+  .dx-meth-research { grid-template-columns: 1fr; }
+}
+
+/* Final CTA at the bottom of the methodology */
+.dx-meth-cta {
+  margin-top: 64px;
+  padding: clamp(48px, 6vw, 72px) clamp(28px, 5vw, 48px);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-align: center;
+}
+.dx-meth-cta h2 {
+  font-size: clamp(28px, 3.4vw, 38px);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.dx-meth-cta p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+@media (max-width: 720px) {
+  .dx-meth-head { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
 /* ---------- Progress ---------- */

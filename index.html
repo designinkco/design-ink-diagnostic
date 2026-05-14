@@ -9,9 +9,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="motion.js" defer></script>
 </head>
 <body>
 
@@ -32,34 +33,136 @@
 
     <!-- INTRO STATE -->
     <section class="dx-state dx-intro" data-state="intro">
-      <div class="dx-intro-inner">
-        <p class="eyebrow">The 10-Point Diagnostic</p>
-        <h1>Your website looks beautiful. <em>Does it book clients?</em></h1>
-        <p class="lede">Most interior design websites look good and book nothing. This four-minute diagnostic scores yours against the ten components that separate the sites that win clients from the ones that just look pretty. Score out of 100. Instant result. No login.</p>
 
-        <div class="dx-intro-meta">
-          <div><strong>4 min</strong><span>to complete</span></div>
-          <div><strong>10 questions</strong><span>yes / partial / no</span></div>
-          <div><strong>Instant</strong><span>scorecard + actions</span></div>
+      <!-- Hero (top of intro) -->
+      <div class="dx-intro-top">
+        <div class="dx-intro-inner">
+          <p class="eyebrow">The 10-Point Diagnostic</p>
+          <h1 data-typewriter>Your website looks beautiful. <em>Does it book clients?</em></h1>
+          <p class="lede">Most interior design websites look good and book nothing. This four-minute diagnostic scores yours against the ten components that separate the sites that win clients from the ones that just look pretty. Score out of 100. Instant result. No login.</p>
+
+          <div class="dx-intro-meta">
+            <div><strong>4 min</strong><span>to complete</span></div>
+            <div><strong>10 questions</strong><span>yes / partial / no</span></div>
+            <div><strong>Instant</strong><span>scorecard + actions</span></div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" data-action="start">Start The Diagnostic</button>
+          <p class="dx-fine">Built on a benchmarked study of 18 interior design studios across the UK, Australia, and the US. <a href="#methodology">How it works ↓</a></p>
         </div>
 
-        <button class="btn btn-primary btn-lg" id="dx-start">Start The Diagnostic</button>
-        <p class="dx-fine">Built on a benchmarked study of 18 interior design studios across the UK, Australia, and the US.</p>
+        <aside class="dx-intro-card">
+          <div class="scorecard">
+            <div class="scorecard-head">
+              <span>Sample Result</span>
+              <span class="score">68<small>/100</small></span>
+            </div>
+            <div class="bar"><label>SEO</label><div class="track"><span style="width:72%"></span></div><b>18</b></div>
+            <div class="bar"><label>Design</label><div class="track"><span style="width:88%"></span></div><b>22</b></div>
+            <div class="bar"><label>Conversion</label><div class="track"><span style="width:60%"></span></div><b>15</b></div>
+            <div class="bar"><label>Trust</label><div class="track"><span style="width:52%"></span></div><b>13</b></div>
+            <p class="scorecard-foot">Lopsided. Beautiful design, but a quiet inquiry path.</p>
+          </div>
+        </aside>
       </div>
 
-      <aside class="dx-intro-card">
-        <div class="scorecard">
-          <div class="scorecard-head">
-            <span>Sample Result</span>
-            <span class="score">68<small>/100</small></span>
-          </div>
-          <div class="bar"><label>SEO</label><div class="track"><span style="width:72%"></span></div><b>18</b></div>
-          <div class="bar"><label>Design</label><div class="track"><span style="width:88%"></span></div><b>22</b></div>
-          <div class="bar"><label>Conversion</label><div class="track"><span style="width:60%"></span></div><b>15</b></div>
-          <div class="bar"><label>Trust</label><div class="track"><span style="width:52%"></span></div><b>13</b></div>
-          <p class="scorecard-foot">Lopsided. Beautiful design, but a quiet inquiry path.</p>
+      <!-- Methodology (long-form explainer; only visible during intro state) -->
+      <div class="dx-methodology" id="methodology">
+
+        <header class="dx-meth-head">
+          <p class="eyebrow">How This Diagnostic Works</p>
+          <a href="#dx-start-bottom" class="dx-meth-skip">Skip ahead, take the diagnostic now →</a>
+        </header>
+
+        <h2 class="dx-meth-headline">The studios losing work are not losing on talent. They are losing on the homepage.</h2>
+
+        <div class="dx-meth-body">
+          <p>When we benchmarked 18 of the most-respected interior design studios across the UK, Australia, and the US, the result surprised us. The studios with the most beautiful photography and the strongest brand recognition were not the ones with the most enquiries. <a href="/research.html">Read the full research report →</a></p>
+          <p>The difference was not talent. It was how they used the homepage. The studios losing work were treating their website as a portfolio. The studios winning were treating it as a sales asset. This diagnostic measures which side of that line your site sits on, across the ten components proven to make the difference.</p>
         </div>
-      </aside>
+
+        <!-- The four pillars -->
+        <section class="dx-meth-section">
+          <p class="eyebrow">The Four Pillars</p>
+          <h3>Your score is balanced across four equally-weighted dimensions.</h3>
+          <p class="dx-meth-lede">Out of 100, 25 points each. The winners are not the best at any one pillar. They are balanced across all four.</p>
+
+          <div class="pillar-grid">
+            <article class="pillar">
+              <p class="pillar-pts">25 pts</p>
+              <h3>SEO &amp; Discoverability</h3>
+              <p>Can a cold visitor find you in Google? Title tags, location pages, content depth, on-page signals.</p>
+            </article>
+            <article class="pillar">
+              <p class="pillar-pts">25 pts</p>
+              <h3>Design &amp; UX</h3>
+              <p>Does the homepage communicate who you are at a glance? Hierarchy, typography, imagery, performance, brand point of view.</p>
+            </article>
+            <article class="pillar">
+              <p class="pillar-pts">25 pts</p>
+              <h3>Conversion</h3>
+              <p>Is the path to enquiry obvious and easy? Above-fold CTAs, services articulation, lead capture, friction in the inquiry path.</p>
+            </article>
+            <article class="pillar">
+              <p class="pillar-pts">25 pts</p>
+              <h3>Trust &amp; Authority</h3>
+              <p>Why should they hire you? Testimonials, press mentions, awards, founder story, portfolio depth, process transparency.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- The ten components -->
+        <section class="dx-meth-section">
+          <p class="eyebrow">The Ten Components</p>
+          <h3>Ten questions, each tied to a specific component.</h3>
+          <p class="dx-meth-lede">Every winning site in the research does most of these. Every losing site does fewer than three.</p>
+
+          <ol class="blueprint-list">
+            <li><strong>SEO title tag</strong> with service and location, not just your studio name.</li>
+            <li><strong>Above-the-fold CTA</strong>, repeated at least three times on the homepage.</li>
+            <li><strong>Tiered services</strong> with anchored pricing, even a "starting from" figure.</li>
+            <li><strong>Three named testimonials</strong> with photo or location attached.</li>
+            <li><strong>Press logo strip</strong> with publications you have been featured in.</li>
+            <li><strong>Awards or industry-body badges</strong> (SBID, BIID, AD Pro, equivalent).</li>
+            <li><strong>Founder photo and story</strong> surfaced on the homepage.</li>
+            <li><strong>Branded point of view</strong> in words, not just images.</li>
+            <li><strong>A journal or blog</strong> with at least quarterly posts.</li>
+            <li><strong>Trust-stacking footer</strong> with accreditations and social proof.</li>
+          </ol>
+        </section>
+
+        <!-- What you'll get -->
+        <section class="dx-meth-section">
+          <p class="eyebrow">What You'll Get</p>
+          <h3>In about four minutes, you will have:</h3>
+
+          <ul class="check-list dx-meth-output">
+            <li>Your score out of 100, broken down by pillar.</li>
+            <li>A radar chart comparing you to the Top 5 average from the research.</li>
+            <li>Your three priority actions, ranked by impact.</li>
+            <li>The full 10-point breakdown showing exactly where you stand on each component.</li>
+          </ul>
+        </section>
+
+        <!-- Research callout -->
+        <aside class="dx-meth-research">
+          <div>
+            <p class="eyebrow">Want The Long Version?</p>
+            <h3>Read the full research report.</h3>
+            <p>The full 100-point methodology, all 18 studios scored, the seven patterns that separate winners from losers, the top-5 deep dives, and the radar comparison.</p>
+          </div>
+          <a href="/research.html" class="btn btn-ghost">Read The Research →</a>
+        </aside>
+
+        <!-- Final CTA -->
+        <div class="dx-meth-cta">
+          <h2>Ready when you are.</h2>
+          <p>Four minutes. Ten questions. Instant result.</p>
+          <button class="btn btn-primary btn-lg" data-action="start" id="dx-start-bottom">Start The Diagnostic</button>
+        </div>
+
+      </div>
+
     </section>
 
     <!-- QUESTION STATE -->
@@ -104,7 +207,7 @@
     <section class="dx-state dx-gate" data-state="gate" hidden>
       <div class="dx-gate-inner">
         <p class="eyebrow">Almost there</p>
-        <h2>Where should we send your results?</h2>
+        <h2 data-typewriter>Where should we send your results?</h2>
         <p class="lede">Your score is ready. Enter your details and we'll show you your full breakdown, your three priority actions, and how your site compares to the top-performing studios in the research.</p>
 
         <form class="dx-gate-form" id="dx-gate-form" novalidate>
@@ -126,7 +229,7 @@
           </label>
           <label class="dx-consent">
             <input type="checkbox" id="dx-consent" />
-            <span>I am happy to receive the Design Ink Co. journal (1x per month). Unsubscribe any time.</span>
+            <span>I am happy to join the Design Ink Co. mailing list, unsubscribe at any time.</span>
           </label>
           <button type="submit" class="btn btn-primary btn-lg">Show Me My Score</button>
           <p class="dx-fine">No spam, no list selling. We use your details only to send your results and follow up.</p>
@@ -138,7 +241,7 @@
     <section class="dx-state dx-results" data-state="results" hidden>
       <header class="dx-results-head">
         <p class="eyebrow">Your Scorecard</p>
-        <h2 id="dx-result-headline">Here's how your site scores.</h2>
+        <h2 id="dx-result-headline" data-typewriter>Here's how your site scores.</h2>
         <p class="lede" id="dx-result-sub">A balanced scorecard across the four pillars that decide whether a cold visitor inquires: SEO, Design, Conversion, and Trust.</p>
       </header>
 
@@ -228,7 +331,7 @@
       </section>
 
       <section class="dx-cta-final" id="book">
-        <h2>Want to talk through your score?</h2>
+        <h2 data-typewriter>Want to talk through your score?</h2>
         <p>Book a free 30-minute discovery call. We'll walk through your results, identify the two changes that would move the needle most, and talk about whether Design for Success is the right next step for your business.</p>
         <div class="cta-row">
           <a href="https://www.designinkco.com" class="btn btn-primary btn-lg">Book A Discovery Call</a>

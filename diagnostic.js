@@ -156,11 +156,15 @@ function showState(name) {
 }
 
 /* =========== Intro =========== */
-$("dx-start").addEventListener("click", () => {
-  state.current = 0;
-  state.answers = new Array(QUESTIONS.length).fill(null);
-  renderQuestion();
-  showState("question");
+// Two Start buttons live on the intro page: one in the hero, one at the
+// end of the methodology explainer. Both fire the same handler.
+document.querySelectorAll("[data-action='start']").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    state.current = 0;
+    state.answers = new Array(QUESTIONS.length).fill(null);
+    renderQuestion();
+    showState("question");
+  });
 });
 
 /* =========== Question rendering =========== */
@@ -385,15 +389,25 @@ function renderResults(score) {
   // Headline + sub, by score band.
   // The bottom CTA section (book a discovery call) is static in HTML now;
   // only the headline + sub above the scorecard change with the score.
+  // Headline uses the typewriter API so the verdict types in dramatically
+  // when the results state appears.
+  let headline = "";
+  let sub = "";
   if (score.total >= 80) {
-    $("dx-result-headline").textContent = "You're already in the top tier.";
-    $("dx-result-sub").textContent = "Your site is built the way the winners build. The next move is the strategy behind it: pricing, positioning, converting enquiries into clients. That's the work inside Design for Success.";
+    headline = "You're already in the top tier.";
+    sub = "Your site is built the way the winners build. The next move is the strategy behind it: pricing, positioning, converting enquiries into clients. That's the work inside Design for Success.";
   } else if (score.total >= 60) {
-    $("dx-result-headline").textContent = "You're in the middle. That's fixable.";
-    $("dx-result-sub").textContent = "Competent, but not yet differentiated. A few targeted changes would push you into the top tier. If you want to talk through your scorecard and what to prioritise first, book a call.";
+    headline = "You're in the middle. That's fixable.";
+    sub = "Competent, but not yet differentiated. A few targeted changes would push you into the top tier. If you want to talk through your scorecard and what to prioritise first, book a call.";
   } else {
-    $("dx-result-headline").textContent = "Your site is leaving clients on the table.";
-    $("dx-result-sub").textContent = "The gaps are clear and they're fixable. But a website is one piece. The bigger question is whether your pricing, positioning, and enquiry process are doing their job. That's what a discovery call is for.";
+    headline = "Your site is leaving clients on the table.";
+    sub = "The gaps are clear and they're fixable. But a website is one piece. The bigger question is whether your pricing, positioning, and enquiry process are doing their job. That's what a discovery call is for.";
+  }
+  $("dx-result-sub").textContent = sub;
+  if (window.typewriter) {
+    window.typewriter.play($("dx-result-headline"), headline);
+  } else {
+    $("dx-result-headline").textContent = headline;
   }
 
   // Priority action list — pick 3 lowest-scoring components
