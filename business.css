@@ -1,0 +1,122 @@
+/* =========================================================
+   Design Ink Co. · The Studio Business Diagnostic
+   Only the rules this page adds on top of styles.css.
+   Nothing here changes The 10-Point Diagnostic.
+   ========================================================= */
+
+/* Three pillars instead of four */
+.sb-pillar-grid { grid-template-columns: repeat(3, 1fr); }
+
+/* Options: the answer text leads, the short key sits beside it */
+.sb-options .dx-option .dx-key { min-width: 64px; }
+.sb-options .dx-option .dx-label { color: var(--ink-soft); }
+
+/* ----- Score card with a bar per pillar ----- */
+.sb-results-grid { align-items: start; }
+.sb-score { gap: 26px; }
+.sb-bars { display: grid; gap: 18px; }
+.sb-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 58px;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+}
+.sb-row-label { color: #C7C3BC; }
+.sb-row b {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  text-align: right;
+  color: var(--paper);
+}
+.sb-row b small { font-size: 13px; color: var(--muted); margin-left: 2px; }
+.sb-track {
+  height: 10px;
+  background: #4A4448;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.sb-track span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #C7C3BC;
+  border-radius: 99px;
+  transition: width .9s cubic-bezier(.2, .7, .2, 1);
+}
+/* The biggest gap is the one bar in orange */
+.sb-row.is-gap .sb-track span { background: var(--accent); }
+.sb-row.is-gap .sb-row-label { color: var(--paper); font-weight: 600; }
+.sb-score .dx-radar-shape { margin-top: 0; font-size: 17px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-track span { transition: none; }
+}
+
+/* ----- Result copy ----- */
+.sb-body p {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+.sb-body .sb-extra {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.sb-result h3 { font-size: 22px; margin: 28px 0 14px; }
+.sb-what { margin: 0 0 28px; }
+.sb-what li { font-size: 15px; }
+.sb-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.sb-under {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ----- Optional email ----- */
+.sb-email {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 40px 36px;
+  margin-bottom: 80px;
+}
+.sb-email-copy h3 { font-size: 26px; margin: 6px 0 12px; }
+.sb-email-copy p:last-child { color: var(--ink-soft); margin: 0; max-width: 44ch; }
+.sb-email-form { margin-top: 0; }
+.sb-email-error {
+  margin: 0;
+  font-size: 14px;
+  color: #A3432A;
+  line-height: 1.5;
+}
+.sb-email-done {
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--ink);
+}
+
+/* ----- Phone and tablet ----- */
+@media (max-width: 960px) {
+  .dx-intro-top { grid-template-columns: 1fr; }
+  .sb-pillar-grid { grid-template-columns: 1fr; }
+  .sb-email { grid-template-columns: 1fr; gap: 24px; padding: 28px 22px; }
+  .sb-email-done { grid-column: 1; }
+}
+@media (max-width: 560px) {
+  .sb-options .dx-option { padding: 16px 16px; gap: 14px; }
+  .sb-options .dx-option .dx-key { min-width: 52px; font-size: 16px; }
+  .sb-row { grid-template-columns: 68px 1fr 52px; gap: 10px; }
+  .sb-cta .btn { width: 100%; box-sizing: border-box; white-space: normal; text-align: center; justify-content: center; }
+  .sb-email .btn { width: 100%; box-sizing: border-box; white-space: normal; justify-self: stretch; }
+}

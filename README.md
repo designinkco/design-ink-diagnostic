@@ -25,3 +25,18 @@ Connected to Vercel. Every `git push` to `main` deploys automatically.
 The email gate POSTs to a webhook configured in `diagnostic.js` (constant
 `WEBHOOK_URL` at the top of the file). The webhook is an n8n flow that
 adds the subscriber to Flodesk and notifies the team.
+
+## The Studio Business Diagnostic
+
+A second diagnostic at `/business` (`business.html`, `business.js`,
+`business.css`). It scores the business side of a studio across Skills,
+Strategy and Systems and routes to one of four results: Design for Success,
+Studio Strategy Session, AI Studio Setup, or Not yet.
+
+- 13 questions: 9 scored (10 / 5 / 0), 4 unscored that only decide the result.
+- Questions, routing rules and all result copy live at the top of `business.js`.
+- The result is shown straight away. Email is optional and comes after it.
+- Email is off until `WEBHOOK_URL` in `business.js` is set to an n8n webhook
+  that adds the person to Flodesk and tags them with `flodesk_tag`.
+- It shares `styles.css` and `motion.js` with The 10-Point Diagnostic and
+  changes neither.
